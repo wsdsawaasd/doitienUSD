@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<label>Amount</label>
+<input type="text" id="amount">
+<label>From currency</label>
+<select id="from">
+    <option value="vn">vietnam</option>
+    <option value="usa">USD</option>
+</select>
+<label>to currency</label>
+<select id="to">
+    <option value="usa">USD</option>
+    <option value="vn">vietnam</option>
+</select>
+<button onclick="f()">Submit</button>
+<div id="1"></div>
+<script>
+    function f() {
+        var amount = parseInt(document.getElementById("amount").value);
+        var from = document.getElementById("from").value;
+        var to = document.getElementById("to").value;
+        var money;
+        if ((from === 'vn') && (to === 'usa')) {
+            money = amount / 23000;
+        } else {
+            money = amount * 23000;
+        }
+        document.getElementById("1").innerHTML = money;
+    }
+</script>
+</body>
+</html>
